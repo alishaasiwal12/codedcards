@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>My Account</ion-title>
+    <ion-buttons slot="primary">
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-grid *ngIf="isLoading">
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2" class="ion-text-center">
+        <ion-spinner color="primary"></ion-spinner>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid *ngIf="!isLoading && account == null" class="design">
+    <p class="data">No Account Created Yet! Please create one first!</p>
+    <ion-row>
+      <ion-col size-sm="6" offset-sm="3" class="ion-text-center">
+        <h5>Step 1. Fill Employee's Visiting Cards Creation Form </h5>
+        <!-- <ion-button color="warning" (click)="onEmployeeForm()">Get Form</ion-button> -->
+        <ion-button color="warning" routerLink="/corporatecards/tabs/employeescards">Get Form</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2" class="ion-text-center">        
+        <h5>Step 2. Company Registration and Upload Employee's Visiting Cards Creation Form</h5>
+        <ion-button color="primary" routerLink="/corporatecards/tabs/spocprofile/ordinarycorporate">
+          Ordinary e-Visiting Card
+        </ion-button>
+        <ion-button color="success" routerLink="/corporatecards/tabs/spocprofile/customcorporate">
+          Custom e-Visiting Card
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+  <ion-grid *ngIf="!isLoading && account != null" class="design">
+
+    <ion-row *ngIf="!account.cardscreated">
+      <ion-col size="12" size-sm="8" offset-sm="2" class="ion-text-center">
+        <p class="data">Employee's Visiting Card Creation is In-Progress!</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2" class="ion-text-center">
+        <ion-card>
+          <ion-item-sliding #slidingSending>
+            <ion-card-header>
+              <ion-card-title>{{ account.name }}</ion-card-title>
+              <ion-card-subtitle>{{ account.contactnumber }}</ion-card-subtitle>
+              <ion-card-subtitle>{{ account.companyname }}</ion-card-subtitle>
+            </ion-card-header>
+            <ion-img [src]="account.imageUrl"></ion-img>
+            <ion-card-content>
+              <!-- <p>{{ account.companyname }}</p> -->
+            </ion-card-content>
+            <!-- <ion-row *ngIf="isAvailable"> -->
+
+            <!-- <ion-item [account]="account"></ion-item> -->
+            <ion-item-options side="end">
+              <ion-item-option color="secondary" (click)="onEdit(account.id, slidingItem)">
+                <ion-icon name="create" slot="icon-only"></ion-icon>
+              </ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-card>
+
+
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

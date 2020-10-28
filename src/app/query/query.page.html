@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <!-- <ion-back-button defaultHref="/savedcards/tabs/mycards"></ion-back-button> -->
+    </ion-buttons>
+    <ion-title>Query</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="animated fadeIn login auth-page">
+  <div>
+    <ion-row>
+      <ion-col>
+        <div></div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <form [formGroup]="form">
+          <ion-grid>
+            <ion-row>
+              <ion-col size-sm="6" offset-sm="3">
+
+                <ion-card class="ion-text-center" no-margin>
+                  <ion-card-header class="design">
+                    <ion-card-title>
+                      <b>Get in Touch</b>
+                    </ion-card-title>
+                  </ion-card-header>
+
+                  <ion-card-content>
+                    <ion-row>
+                      <ion-col size-sm="6" offset-sm="3">
+                        <ion-item>
+                          <ion-label position="floating">Name</ion-label>
+                          <ion-input type="text" autocomplete autocorrect formControlName="queryName"></ion-input>
+                        </ion-item>
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                      <ion-col size-sm="6" offset-sm="3">
+                        <ion-item>
+                          <ion-label position="floating">Phone Number</ion-label>
+                          <ion-input type="number" formControlName="queryPhoneNumber"></ion-input>
+                        </ion-item>
+                      </ion-col>
+                    </ion-row>
+                    <ion-row *ngIf="
+                  !form.get('queryPhoneNumber').valid && form.get('queryPhoneNumber').touched">
+                      <ion-col size-sm="6" offset-sm="3">
+                        <p>Contact Number must have 10 digits.</p>
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                      <ion-col size-sm="6" offset-sm="3">
+                        <ion-item>
+                          <ion-label position="floating">Message</ion-label>
+                          <ion-input type="text" formControlName="queryMessage"></ion-input>
+                        </ion-item>
+                      </ion-col>
+                    </ion-row>
+                  </ion-card-content>
+                </ion-card>
+
+                <div class="center">
+                  <ion-button color="dark" type="submit" (click)="onQuerySubmit()">Submit</ion-button>
+                </div>
+
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </form>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

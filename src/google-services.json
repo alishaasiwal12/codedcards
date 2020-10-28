@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "346466379679",
+    "firebase_url": "https://codedcards.firebaseio.com",
+    "project_id": "codedcards",
+    "storage_bucket": "codedcards.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:346466379679:android:c4e17a7cb72f9db185ffaa",
+        "android_client_info": {
+          "package_name": "com.entrepreneur.codedcards"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "346466379679-l56t502djjlr03gscqgm20f1cgd5a28i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRHOpsD5w_nU21GeBH_RHDkEyUwSZqgVY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "346466379679-l56t502djjlr03gscqgm20f1cgd5a28i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,12 @@
+//Pre-requisities 
+//To run and build the application
+
+Install NodeJS
+npm i ionic@5.0.0
+cd codedcards
+cd visitingcards
+npm install -g firebase-tools 
+npm install firebase @angular/fire --save
+npm install firebase-admin --save
+ionic cordova platform add browser
+ionic serve        //to build and run in browser

@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ isLogin ? 'Login' : 'Signup' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="animated fadeIn login auth-page">
+  <div class="theme-bg"></div>
+  <div class="auth-content">
+
+    <!-- Logo -->
+    <div padding-horizontal text-center class="animated fadeInDown">
+      <div class="logo"></div>
+      <h4 no-margin class="center">
+        <ion-text color="light" class="fw700">
+          Coded Cards
+        </ion-text>
+      </h4>
+    </div>
+
+    <!-- Login form -->
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="list-form">
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          <ion-icon name="mail" item-start></ion-icon>
+          Email
+        </ion-label>
+        <ion-input color="secondary" type="email" ngModel name="email" required email #emailCtrl="ngModel"></ion-input>
+      </ion-item>
+      <p ion-text class="text08" *ngIf="!emailCtrl.valid && emailCtrl.touched" lines="none">
+        <ion-text color="warning">
+          Should be a valid email address
+        </ion-text>
+      </p>
+ 
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          <ion-icon name="lock-closed" item-start></ion-icon>
+          Password
+        </ion-label>
+        <ion-input color="secondary" ngModel name="password" required minlength="6"
+          [type]="showPassword ? 'text' : 'password'" #passwordCtrl="ngModel"></ion-input>
+        <ion-icon slot="end" [name]="passwordToggleIcon" (click)="passwordToggle()">
+        </ion-icon>
+      </ion-item>
+      <p ion-text color="warning" class="text08" *ngIf="!passwordCtrl.valid && passwordCtrl.touched" lines="none">
+        <ion-text color="warning">
+          Password should at least be 6 characters long.
+        </ion-text>
+      </p>
+
+      <div>
+        <ion-button icon-left size="medium" expand="full" shape="round" color="dark" type="submit" [disabled]="!f.valid"
+          tappable>
+          <ion-icon name="log-in"></ion-icon>
+          {{ isLogin ? 'Login' : 'Signup' }}
+        </ion-button>
+      </div>
+
+      <!-- Other links -->
+      <div text-center margin-top class="center">
+        <span (click)="onSwitchAuthMode()" class="paz" tappable>
+          <ion-text color="light">
+            Switch to <strong>{{ isLogin ? 'Signup' : 'Login' }}</strong>
+          </ion-text>
+        </span>
+      </div>
+    </form>
+
+
+
+  </div>
+</ion-content>

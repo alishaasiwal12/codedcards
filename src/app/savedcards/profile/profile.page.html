@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>My Account</ion-title>
+    <ion-buttons slot="primary">
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-grid *ngIf="isLoading">
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2" class="ion-text-center">
+        <ion-spinner color="primary"></ion-spinner>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid *ngIf="!isLoading && account == null" class="design">
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2" class="ion-text-center">
+        <p class="data">Visiting Card not created! Please create one first!</p>
+        <ion-button color="primary" routerLink="/savedcards/tabs/profile/ordinary">
+          Ordinary e-Visiting Card
+        </ion-button>
+        <ion-button color="success" routerLink="/savedcards/tabs/profile/custom">
+          Custom e-Visiting Card
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid *ngIf="!isLoading && account != null" class="design">
+
+    <ion-row *ngIf="account.logoUrl && !account.imageUrl">
+      <ion-col size="12" size-sm="8" offset-sm="2" class="ion-text-center">
+        <p class="data">Visiting Card Creation is In-Progress!</p>
+        <!-- <button class="clickbtn" routerLink="/savedcards/tabs/profile/design">Design Card</button> -->
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="account.imageUrl">
+      <ion-col size="12" size-sm="8" offset-sm="2" class="ion-text-center">
+        <ion-card>
+          <ion-item-sliding #slidingSending>
+            <ion-card-header>
+              <ion-card-title>{{ account.name }}</ion-card-title>
+              <ion-card-subtitle>{{ account.contactnumber }}</ion-card-subtitle>
+              <ion-card-subtitle>{{ account.companyname }}</ion-card-subtitle>
+            </ion-card-header>
+            <ion-img [src]="account.imageUrl"></ion-img>
+            <ion-card-content>
+              <!-- <p>{{ account.companyname }}</p> -->
+              <ion-row>
+                <ion-col *ngIf="account.linkedinurl != null">
+                  <img src="../../../assets/images/linkedin.png" style="width:50%" (click)="onOpenSocial(account.linkedinurl)">
+                </ion-col>
+                <ion-col *ngIf="account.facebookurl != null">
+                  <img src="../../../../assets/images/facebook.png" style="width:50%" (click)="onOpenSocial(account.facebookurl)">
+                </ion-col>
+                <ion-col *ngIf="account.instagramurl != null"> 
+                  <img src="../../../../assets/images/instagram.jpeg" (click)="onOpenSocial(account.instagramurl)">
+                </ion-col>           
+              </ion-row>
+            </ion-card-content>
+            <!-- <ion-row *ngIf="isAvailable"> -->
+
+
+            <ion-row>
+              <ion-col size-sm="6" offset-sm="3" class="ion-text-center">
+                <ion-button color="primary" (click)="onShare()">Send</ion-button>
+              </ion-col>
+            </ion-row>
+
+            <!-- <ion-item [account]="account"></ion-item> -->
+            <ion-item-options side="end">
+              <ion-item-option color="secondary" (click)="onEdit(account.id, account.customer, slidingItem)">
+                <ion-icon name="create" slot="icon-only"></ion-icon>
+              </ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-card>
+
+
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

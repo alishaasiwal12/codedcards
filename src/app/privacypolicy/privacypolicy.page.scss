@@ -1,0 +1,18 @@
+// ion-content{
+//     font-size: 50px;
+//     font: outline;
+//     font-weight: 300;
+//     // text-align: center;
+//     --background: url(../../assets/images/instructions.jpg) 0 0/100% 100% no-repeat;
+//   }
+
+:host {
+  ion-content {
+      --background: linear-gradient(135deg, var(--ion-color-dark), var(--ion-color-primary));
+    }
+  }
+  
+.paz {
+  position: relative;
+  z-index: 10;
+  }

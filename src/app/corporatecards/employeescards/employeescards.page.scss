@@ -1,0 +1,73 @@
+.center{
+    font-size: 40px;
+    font: outline;
+    font-weight: 300;
+    text-align: center;
+}
+
+.design{
+  font: outline;
+  font-size: 40px;  
+  font-weight: 300;
+  color: #ffffff;
+  text-align: center;  
+}
+
+.data{
+  font: outline;
+  font-size: 18px;  
+  font-weight: 60;
+  color: #ffffff;
+  text-align: center;  
+}
+
+.imgListaPosition {
+  position: absolute;
+  z-index: 5;
+  top: 20%;
+  left: 80%;
+}
+
+.imgListaSize {
+  width: 100px;  
+  height : 100px;  
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 50px;
+}
+
+.foo02 {
+  margin: auto;
+  width: 20vw !important;
+  height: 20vw !important;
+  border: 1vw solid #fff;
+}
+
+.images-parent{
+    text-align: center;
+  }
+
+ion-card{
+    --ion-background-color: #ffffff;
+}
+
+//   ion-content{
+//     --ion-background-color:linear-gradient(#4786ef, #f4f5f8);
+//     //linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.6278886554621849) 35%, rgba(0,212,255,1) 100%);
+// }
+
+ion-content{
+  --background: url(../../../assets/images/greenbackground.jpg) 0 0/100% 100% no-repeat;
+}
+
+.data-col {
+    background: #f0f0f0;
+}
+ 
+.has-focus {
+    --background: #fdf696;
+}
+ 
+.data-table {
+    min-width: 800px;
+}

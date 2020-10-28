@@ -1,0 +1,21 @@
+// Slider Style START 
+.slide-text{
+  position: absolute;
+  font: outline;
+  font-weight: 200px;
+  color: black;
+  bottom: 30px;
+}
+
+:host {
+  ion-content {
+      --background: linear-gradient(135deg, var(--ion-color-dark), var(--ion-color-primary));
+    }
+  }
+  
+.paz {
+  position: relative;
+  z-index: 10;
+  }
+
+// Slider Style STOP

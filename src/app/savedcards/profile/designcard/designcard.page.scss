@@ -1,0 +1,118 @@
+.container {
+    position: fixed;
+    width: 65%;
+    visibility: hidden;
+  }
+
+  #card_img {
+    width: 65%;
+    position: relative;
+  }
+
+  .value {
+    position: absolute;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2vw;
+    font-weight: bold;
+    color: white;
+    top: 39%;
+    left: 13.5%;
+  }
+
+  .val_comp {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+  }
+
+  .contact img {
+    width: 10%;
+  }
+
+  .contact {
+    position: absolute;
+    left: 40%;
+    bottom: 21%;
+    color: white;
+    font-size: 1vw;
+
+  }
+
+  .contact a {
+    color: white;
+  }
+
+  .social_networking {
+    position: absolute;
+    display: inline-flex;
+    left: 35%;
+    bottom: 4%;
+    font-size: 1vw;
+  }
+
+  .social_networking img {
+    width: 30%;
+  }
+
+  /* input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+} */
+
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  .name {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+
+  .val {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  #inp {
+    visibility: visible;
+  }
+
+  #cont {
+    width: 65%;
+    margin: auto;
+  }
+
+  @media screen and (max-width: 600px) {
+    .name,
+    .val,
+    input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }

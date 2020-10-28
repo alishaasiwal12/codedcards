@@ -1,0 +1,114 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="animated fadeIn login auth-page">
+  <ion-grid fixed no-padding>
+    <ion-row>
+      <ion-col>
+        <ion-card no-margin class="animated fadeIn login auth-page" routerLink="/savedcards">
+          <ion-card-header>
+            <ion-item lines="none">
+              <ion-icon class="icon" name="person-circle" color="light"></ion-icon>
+            </ion-item>
+          </ion-card-header>
+          <ion-card-content class="design">
+            <h3>Individual User</h3>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card no-margin class="animated fadeIn login auth-page" routerLink="/corporatecards">
+          <ion-card-header>
+            <ion-item lines="none">
+              <ion-icon class="icon" name="desktop" color="light"></ion-icon>
+            </ion-item>
+          </ion-card-header>
+          <ion-card-content class="design">
+            <h3>Corporate Admin</h3>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card no-margin class="animated fadeIn login auth-page"  routerLink="/privacypolicy">
+          <ion-card-header>
+            <ion-item lines="none">
+              <ion-icon class="icon" name="information-circle" color="light"></ion-icon>
+            </ion-item>
+          </ion-card-header>
+          <ion-card-content class="design">
+            <h3>Privacy Policy</h3>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card no-margin class="animated fadeIn login auth-page" routerLink="/showinstructions">
+          <ion-card-header>
+            <ion-item lines="none">
+              <ion-icon class="icon" name="book" color="light"></ion-icon>
+            </ion-item>
+          </ion-card-header>
+          <ion-card-content class="design">
+            <h3>Show Instructions</h3>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card no-margin class="animated fadeIn login auth-page" routerLink="/rateapp">
+          <ion-card-header>
+            <ion-item lines="none">
+              <ion-icon class="icon" name="star" color="light"></ion-icon>
+            </ion-item>
+          </ion-card-header>
+          <ion-card-content class="design">
+            <h3>Rate Us</h3>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col col-6="">
+        <ion-card no-margin class="animated fadeIn login auth-page" routerLink="/shareapp">
+          <ion-card-header>
+            <ion-item lines="none">
+              <ion-icon class="icon" name="paper-plane" color="light"></ion-icon>
+            </ion-item>
+          </ion-card-header>
+          <ion-card-content class="design">
+            <h3>Share App</h3>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6="">
+        <ion-card no-margin class="animated fadeIn login auth-page" routerLink="/query">
+          <ion-card-header>
+            <ion-item lines="none">
+              <ion-icon class="icon" name="help" color="light"></ion-icon>
+            </ion-item>
+          </ion-card-header>
+          <ion-card-content class="design">
+            <h3>Help</h3>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card no-margin class="animated fadeIn login auth-page" (click)="onLogout()">
+          <ion-card-header>
+            <ion-item lines="none">
+              <ion-icon class="icon" name="exit" color="light"></ion-icon>
+            </ion-item>
+          </ion-card-header>
+          <ion-card-content class="design">
+            <h3>Logout</h3>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

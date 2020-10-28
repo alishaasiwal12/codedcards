@@ -1,0 +1,64 @@
+<ion-app>
+
+  <div *ngIf="showSplash" class="splash">
+    <div class="spinner"></div>
+  </div>
+
+  <ion-menu side="start">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>
+          Coded Cards
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/customertype">
+            <ion-icon name="home" slot="start"></ion-icon>
+            <ion-label>Home</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/privacypolicy">
+            <ion-icon name="information-circle" slot="start"></ion-icon>
+            <ion-label>Privacy Policy</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/showinstructions">
+            <ion-icon name="book" slot="start"></ion-icon>
+            <ion-label>Show Instructions</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/rateapp">
+            <ion-icon name="star" slot="start"></ion-icon>
+            <ion-label>Rate Us</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/shareapp">
+            <ion-icon name="paper-plane" slot="start"></ion-icon>
+            <ion-label>Share App</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/query">
+            <ion-icon name="help" slot="start"></ion-icon>
+            <ion-label>Help</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" (click)="onLogout()" button>
+            <ion-icon name="exit" slot="start"></ion-icon>
+            <ion-label>Logout</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet main></ion-router-outlet>
+</ion-app>

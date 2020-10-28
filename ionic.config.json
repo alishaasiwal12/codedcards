@@ -1,0 +1,8 @@
+{
+  "name": "Coded Cards",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

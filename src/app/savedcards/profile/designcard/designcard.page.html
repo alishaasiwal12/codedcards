@@ -1,0 +1,50 @@
+<ion-header>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <ion-toolbar>
+    <ion-title>Card Design</ion-title>
+  </ion-toolbar>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+  <script type="text/javascript"></script>
+</ion-header>
+
+<ion-content style="text-align:center">
+
+  <div class="container" id="cont">
+    <!-- <img id="card_img" [src]='templateUrl' /> -->
+    <img id="card_img" ng-src="{{getCard}}"/>
+    <div>
+      <div class="value">
+        <div class=nam_val>
+          <p id="lbl_name">{{account.name}}</p>
+        </div>
+        <div class="val_comp">
+          <p id="val_name">{{account.companyname}}</p>
+        </div>
+      </div>
+      <div class="contact">
+        <div id="phone">
+          <a href="#"><img src="../../../../assets/images/design/phone.png"></a><a id="phone_number"
+            href="#">{{account.contactnumber}}</a>
+        </div>
+        <div id="email">
+          <a href="#"><img src="../../../../assets/images/design//email.png"></a><a id="email_id"
+            href="#">{{account.userEmail}}</a>
+        </div>
+      </div>
+      <div class="social_networking">
+        <div id="linkedin_val">
+          <a [href]='account.linkedinurl'><img src="../../../../assets/images/design/instagram.png"></a>
+        </div>
+        <div id="facebook_val">
+          <a [href]='account.facebookurl'><img src="../../../../assets/images/design/facebook.png"></a>
+        </div>
+        <div id="instagram_val">
+          <a [href]='account.instagramurl'><img src="../../../../assets/images/design/instagram.png"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ion-button type="submit" (click)="createImage()" class="clickbtn" color="success" expand="block">Create Card
+  </ion-button>
+</ion-content>

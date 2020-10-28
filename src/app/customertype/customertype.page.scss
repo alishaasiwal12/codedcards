@@ -1,0 +1,59 @@
+.center{
+  font-size: 40px;
+  font: outline;
+  font-weight: 300;
+  text-align: center;
+}
+
+.design{
+font: outline;
+font-size: 40px;  
+font-weight: 300;
+color: #ffffff;
+text-align: center;  
+}
+
+.images-parent{
+  text-align: center;
+}
+
+// ion-content{
+//   font-size: 40px;
+//   font: outline;
+//   font-weight: 300;
+//   text-align: center;
+//   --background: url(../../assets/images/instructions.jpg) 0 0/100% 100% no-repeat;
+// }
+
+.circle {
+background: blue;
+color: white;
+width: 120px;
+height: 120px;
+position: relative;
+border-radius: 100%;
+}
+
+.icon {
+position: absolute;
+top: 52%;
+left: 40%;
+// height: 50%;
+transform: translate(-50%, -50%);
+width: 55px;
+height: 55px;
+display: block;
+// background: red;
+}
+
+:host {
+ion-content {
+    --background: linear-gradient(135deg, var(--ion-color-dark), var(--ion-color-primary));
+  }
+}
+
+.paz {
+position: relative;
+z-index: 10;
+}
+

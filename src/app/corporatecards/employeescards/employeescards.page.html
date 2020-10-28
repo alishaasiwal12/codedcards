@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/corporatecards/tabs/spocprofile"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Employees List</ion-title>
+
+    <ion-buttons slot="primary">
+      <ion-button (click)="exportCSV()">
+        <ion-icon name="download" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content scrollX="true" scrollY="true">
+  <table border="2" class="data-table">
+    <tr>
+      <td *ngFor="let header of headerRow" class="data" text-center><b>{{ header }}</b></td>
+    </tr>
+    <tr *ngFor="let row of csvData; let i = index">
+      <td *ngFor="let data of row; let j = index; trackBy: trackByFn" class="data-col ">
+        <ion-input type="text" [(ngModel)]="csvData[i][j]"></ion-input>
+      </td>
+    </tr>
+  </table> 
+</ion-content>
